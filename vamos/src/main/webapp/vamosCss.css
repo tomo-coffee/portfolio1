@@ -1,0 +1,439 @@
+@charset "UTF-8";
+/*h1用フォント*/
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+/*ページ全体用フォント*/
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap');
+
+/*
+metaタグの下に<link rel="stylesheet" href="vamosCss.css" type="text/css">を記載
+実行したいCSSの場所を<div class="識別名（間に空白で複数可能）"></div>で囲む
+もしくは該当要素の属性にclass="識別名をつける"
+*/
+
+/*************/
+/*各CSSの属性名
+*行間広め：bs
+*左の余白：block1
+*罫線（青ドット）：style01
+*見出し（h1）でそのまま反映
+*aタグ（□で端に>線の色はオレンジ）：btn01
+*aタグ（角丸黒→オレンジ）：btn02
+*aタグ（角丸白→オレンジ）：btn03
+*button（角丸黒→オレンジ）:btn04
+*button（角丸白→オレンジ）:btn05
+*buttonタグ（予約ボタン用）：btn
+*フォーム（form）でそのまま反映
+*テーブル（table）でそのまま反映
+*/
+/*************/
+
+body{
+	font-family: 'Kiwi Maru', serif;
+}
+
+
+/*行間広め*/
+.bs{
+	line-height: 2;
+}
+
+/*左の余白*/
+.block1{
+  margin-left: 100px;
+}
+
+/*ヘッダー*/
+header {
+  display: flex;
+  width: 100%;
+  height: 70%;
+  background-image: url(img/maru49.png);
+  background-position: right top;
+  background-color: #FFF6F4;
+  align-items: left;
+}
+
+/*罫線＜青ドット（style01）＞*/
+hr.style01 {
+  background-color: #fff;
+  border-top: 2px dashed #525FE1;
+}
+
+/*見出しデザイン＜h1＞*/
+h1 {
+	font-family: 'Zen Maru Gothic', serif;
+	font-size: 22px;
+	color: #333;
+	position: relative;
+	padding-left: 25px;
+	display: inline-block;
+}
+
+h1:before {
+	position: absolute;
+	content: '';
+	bottom: -4px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border: none;
+	border-left: solid 15px transparent;
+	border-bottom: solid 15px #fc6404;
+}
+h1:after {
+	position: absolute;
+	content: '';
+	bottom: -4px;
+	left: 10px;
+	width: 100%;
+	border-bottom: solid 4px #fc6404;
+}
+
+/*普通のリンク（予約リンクと同じ）＜btn01＞*/
+
+.btn01 a {
+  font-family: 'Kiwi Maru', serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration:none;
+  margin: 0 auto;
+  padding: 0.3em 0.3em;
+  width: 100px;
+  color: #fc6404;
+  font-size: 14px;
+  font-weight: 700;
+  border: 2px solid #fc6404;
+}
+
+.btn01 a::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid #fc6404;
+  border-right: 3px solid #fc6404;
+  transform: rotate(45deg);
+}
+
+.btn01 a:hover {
+  color: #FFF6F4;
+  text-decoration: none;
+  background-color: #fc6404;
+}
+
+.btn01 a:hover::after {
+  border-top: 3px solid #FFF6F4;
+  border-right: 3px solid #FFF6F4;
+}
+
+/*普通のリンク＜btn02＞*/
+/*黒→オレンジ*/
+.btn02 a{
+  font-family: 'Kiwi Maru', serif;
+  display: inline-block;
+  text-decoration:none;
+  text-align: center;
+  width: 120px;
+  padding: 3px;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn02 a:hover{
+  color: #333;
+  text-decoration: none;
+  background-color: #fc6404;
+}
+/*普通のリンク＜btn03＞*/
+/*白→オレンジ*/
+.btn03 a{
+  font-family: 'Kiwi Maru', serif;   
+  display: inline-block;
+  text-decoration:none;
+  text-align: center;
+  width: 120px;
+  padding: 3px;
+  border: none;
+  border-radius: 4px;
+  background-color: #d3d3d3;
+  color: #333;
+  font-weight: bold;
+  font-size: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn03 a:hover{
+  color: #333;
+  text-decoration: none;
+  background-color: #fc6404;
+}
+
+/*ボタン＜btn04＞*/
+/*黒→オレンジ*/
+.btn02 button{
+  font-family: 'Kiwi Maru', serif;   
+  display: inline-block;
+  text-decoration:none;
+  text-align: center;
+  width: 120px;
+  padding: 3px;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn02 button:hover{
+  color: #333;
+  text-decoration: none;
+  background-color: #fc6404;
+}
+/*ボタン＜btn05＞*/
+/*白→オレンジ*/
+.btn03 button{   
+  font-family: 'Kiwi Maru', serif;
+  display: inline-block;
+  text-decoration:none;
+  text-align: center;
+  width: 120px;
+  padding: 3px;
+  border: none;
+  border-radius: 4px;
+  background-color: #d3d3d3;
+  color: #333;
+  font-weight: bold;
+  font-size: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn03 button:hover{
+  color: #333;
+  text-decoration: none;
+  background-color: #fc6404;
+}
+
+/*予約ボタン＜btn＞*/
+.btn button {
+  font-family: 'Kiwi Maru', serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration:none;
+  margin: 0 auto;
+  padding: 0.3em 0.3em;
+  width: 125px;
+  color: #fc6404;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  border: 2px solid #fc6404;
+}
+
+.btn button::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid #fc6404;
+  border-right: 3px solid #fc6404;
+  transform: rotate(45deg);
+}
+
+.btn button:hover {
+  color: #FFF6F4;
+  text-decoration: none;
+  background-color: #fc6404;
+}
+
+.btn button:hover::after {
+  border-top: 3px solid #FFF6F4;
+  border-right: 3px solid #FFF6F4;
+}
+
+/*フォームデザイン＜form＞*/
+
+form { max-width:500px; margin:0; }
+
+.feedback-input {
+  color:white;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #CC6666;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100px;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid #CC4949; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+/*submitボタン（黒→オレンジ）*/
+[type="submit"] {
+	font-family: 'Kiwi Maru', serif;
+    display: inline-block;
+    width: 100px;
+    padding: 3px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+[type="submit"]:after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid #fc6404;
+  border-right: 3px solid #fc6404;
+  transform: rotate(45deg);
+}
+
+[type="submit"]:hover {
+  color: #333;
+  text-decoration: none;
+  background-color: #fc6404;
+}
+
+[type="submit"]:hover::after {
+  border-top: 3px solid #FFF6F4;
+  border-right: 3px solid #FFF6F4;
+}
+/*resetボタン（白→オレンジ）*/
+[type="reset"] {
+	font-family: 'Kiwi Maru', serif;
+    display: inline-block;
+    width: 100px;
+    padding: 3px;
+    border: none;
+    border-radius: 4px;
+    background-color: #d3d3d3;
+    color: #333;
+    font-weight: bold;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    border: 2px solid transparent
+}
+
+[type="reset"]:after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid #fc6404;
+  border-right: 3px solid #fc6404;
+  transform: rotate(45deg);
+}
+
+[type="reset"]:hover {
+  color: #FFF6F4;
+  text-decoration: none;
+  background-color: #fc6404;
+}
+
+[type="reset"]:hover::after {
+  border-top: 3px solid #FFF6F4;
+  border-right: 3px solid #FFF6F4;
+}
+
+/*テーブル＜table01＞*/
+
+.table01 table{
+  width: 860px;
+  border-collapse: collapse;
+}
+
+.table01 table tr{
+  border-bottom: solid 2px #FFFFFF;
+}
+
+.table01 table tr:last-child{
+  border-bottom: none;
+}
+
+.table01 table th{
+  width: 20%;
+  background-color: #86cae3;
+  color: #FFFFFF;
+  text-align: right;
+  text-shadow    : 			/* 文字の影 */
+       1px  1px 0px #333,
+      -1px  1px 0px #333,
+       1px -1px 0px #333,
+      -1px -1px 0px #333,
+       1px  0px 0px #333,
+       0px  1px 0px #333,
+      -1px  0px 0px #333,
+       0px -1px 0px #333;        
+  padding: 10px 10px;
+}
+
+.table01 table th:after{
+  display: block;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top:calc(50% - 10px);
+  right:-10px;
+  border-left: 10px solid1#86cae3;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.table01 table td{
+  width: 60%;
+  text-align: left;
+  background-color: #eee;
+  padding: 10px 10px;
+  border-left: 2px solid #FFFFFF;
+}
+
+/* reserve.jspでつかうテーブル*/
+.res-tbl table{
+	width:434;
+	border-collapse: collapse;
+	text-align:center;
+}
+.res-tbl table td{
+	text-align:center;
+}
